@@ -9,6 +9,7 @@ echo "O valor do desconto de $joaoNome é de R$ $joaoDescontos. <br>";
 
 $mariaSalario = 2000;
 $mariaPrevidencia = 200;
+$mariaNome = 'Maria Rute';
 $mariaDescontos = number_format($mariaSalario*0.275 + $mariaPrevidencia, 2, ',', '.');
 
 echo "O valor do desconto de $mariaNome é de R$ $mariaDescontos. <br>";
