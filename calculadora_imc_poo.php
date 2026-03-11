@@ -1,26 +1,34 @@
 <?php
 class Pessoa {
-    public $nome;
-    public $peso;
-    public $altura;
-    public $imc;
+    public string $nome;
+    public float $peso;
+    public float $altura;
+    public float $imc;
 
-    function __construct($nome, $peso, $altura)
+    public function __construct($nome, $peso, $altura)
     {
-        $this->nome=$nome;
-        $this->peso=$peso;
-        $this->altura=$altura;
-        $this->imc = $this->calcularImc();
+        $this->nome = $nome;
+        $this->peso = $peso;
+        $this->altura = $altura;
+        $this->imc = $this->calcularIMC();
     }
 
-    function calcularImc()
+    public function calcularIMC(): float
     {
-        return number_format($this->peso / ($this->altura*$this->altura), 2, ",", ".");
+        return $this->peso / ($this->altura * $this->altura);
+    }
+
+    public function exibirIMC(): string
+    {
+        $imc_formatado = number_format($this->imc, 2, ',', '.');
+        return "O IMC de {$this->nome} é {$imc_formatado}";
     }
 }
 
-$paulo = new Pessoa('Paulo Ferraz', 89, 1.90);
-echo "$paulo->nome seu IMC é $paulo->imc. <br>";
+$ana = new Pessoa ("Ana Latorre", 50, 1.63);
+echo $ana->exibirIMC();
 
-// $gestrudes = new Pessoa('Gertrudes', 67, 1.60);
-// echo "$gertrudes->nome seu IMC é $gertrudes->imc. <br>";
+echo "<br>";
+
+$gustavo = new Pessoa ("Gustavo Almeida", 160, 1.93);
+echo $gustavo->exibirIMC();
