@@ -21,7 +21,7 @@ class Visibilidade {
         echo "Método Protegido<br>";
     }
 
-    // protege os filhos mas também priva de tudo
+    // protege os filhos mas também priva de tudo 
     private function privateFunc() {
         echo "Método Privado<br>";
     }
